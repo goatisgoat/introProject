@@ -28,7 +28,6 @@
         width: 300px;
         height: 300px;
         margin: 20px auto;
-        background-image: url("https://i.namu.wiki/i/y9f5vOHoe4KtAVYfK4ghPWTi8umyFCDyyzFOqnJmOk1tiOwQfxMMKzKto1kO-KHcB3vfCR-PbmHVWCp_hzC75Q.webp");
         background-position: center;
         background-size: cover;
         border-radius: 50%;
@@ -122,7 +121,7 @@
         width: 60%;
         height: 45%;
         padding: 0 20px;
-        margin:  10px auto;
+        margin: 10px auto;
         overflow: scroll;
       }
       .inputList {
@@ -138,6 +137,126 @@
         border-radius: 10px;
         text-align: center;
         background-color: antiquewhite;
+      }
+
+      nav {
+        position: fixed;
+        left: 50%;
+        top: 100px;
+        margin-left: 350px;
+        z-index: 10;
+      }
+
+      nav > .gnb {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        height: 120px;
+        list-style-type: none;
+      }
+
+      nav > .gnb > li {
+        width: 120px;
+        border: none;
+        /* border: 1px solid #ccc; */
+      }
+
+      nav > .gnb > li > a {
+        display: block;
+        height: 30px;
+        /*큰하트 간격*/
+        line-height: 30px;
+        text-align: center;
+      }
+
+      nav > .gnb > li:hover > a {
+        opacity: 0.5;
+        background-color: transparent;
+        transform: scale(1.4);
+        transition: transform 0.3s;
+      }
+
+      .lnb {
+        display: none;
+        position: absolute;
+        /* lift: -1px; //상위메뉴에 설정한 border:1px 때문에 자식요소가 밀려나서// */
+        top: 50px;
+        width: 100%;
+        /* border: 1px solid black; */
+        list-style: none;
+      }
+      nav > .gnb > .lnb {
+        display: none;
+        position: absolute;
+        left: -1px;
+        top: 50px;
+        width: 100;
+        border: 1px solid black;
+      }
+
+      nav > .gnb > li:hover > .lnb {
+        display: block;
+      }
+
+      nav > .gnb > .lnb > li {
+        border-bottom: 1px solid black;
+      }
+
+      nav > .gnb > .lnb > li :last-chinld {
+        border-bottom-width: 0;
+      }
+
+      nav > .gnb > .lnb > li > a {
+        display: block;
+        line-height: 50px;
+        text-align: center;
+        background-color: #fff;
+      }
+
+      nav > .gnb > .lnb > li:hover > a {
+        background-color: sandybrown;
+      }
+
+      li:hover > .lnb {
+        display: block;
+      }
+
+      a {
+        color: sandybrown;
+        text-decoration-line: none;
+      }
+
+      /* 팀소개페이지,글 */
+      .team {
+        flex-wrap: wrap;
+        display: flex;
+        align-content: stretch;
+        justify-content: space-between;
+
+        width: 100%;
+        border-radius: 30px;
+
+        margin: 20px auto 20px auto;
+      }
+
+      .intro {
+        width: 710px;
+        height: 614px;
+      }
+
+      .team_text {
+        margin-top: 70px;
+      }
+
+      .team_textbottom {
+        margin-top: 30px;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        text-decoration-style: wavy;
+        text-decoration-thickness: 2px;
+        letter-spacing: 1.5px;
+        line-height: 40px;
+        text-align: center;
       }
     </style>
     <script>
@@ -173,11 +292,46 @@
     </script>
   </head>
   <body>
+    <nav>
+      <ul class="gnb">
+        <li>
+          <a href="#section1">❤️</a>
+          <ol class="lnb">
+            <li><a href="#section1-1">✦</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#section2">🧡</a>
+          <ol class="lnb">
+            <li><a href="#section2-1">✦</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#section3">💛</a>
+          <ol class="lnb">
+            <li><a href="#section3-1">✦</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#section4">💚</a>
+          <ol class="lnb">
+            <li><a href="#section4-1">✦</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#section5">💙</a>
+          <ol class="lnb">
+            <li><a href="#section5-1">✦</a></li>
+          </ol>
+        </li>
+      </ul>
+    </nav>
+
     <div class="section" id="section1">
       <div class="section1Container">
         <h1>title</h1>
         <div class="section1Input">
-          <input id="commentInput" type="text" placeholder="방명록 작성하기"/>
+          <input id="commentInput" type="text" placeholder="방명록 작성하기" />
           <button onclick="posting()">click</button>
         </div>
       </div>
@@ -187,9 +341,56 @@
         <!-- <ul ></ul> -->
       </div>
     </div>
+    <div class="section" id="section1-1">
+      <div class="team" id="wrap_img">
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+      </div>
+      <div class="intro" style="text-align: center;">
+          <div class="team_text">
+              <p>안녕하세요. 저희 6조는요🌼</p>
+              <p>조원 4명 모두 비전공자이자 코린이들이에요.</p>
+              <p>출발은 조금씩 다르지만 모두가 좋은 개발자가 되기 위해</p>
+              <p>열정🔥을 가지고 함께 준비하고 있어요!!</p>
+          </div>
+          </br>
+          <div class="team_textbottom">
+              <p>
+              <h1>🐤우리 팀 약속🐤</h1>
+              </p>
+              <p>
+              <h2>시간 약속 잘 지키기</h2>
+              </p>
+              </br>
+              <p>
+              <h1>🐤우리 팀 규칙🐤</h1>
+              </p>
+              <p>
+              <h3>9AM 인사 🍚 자유롭게 질문 🍚 8PM 점검</h3>
+              </p>
+              </p>
+          </div>
+
+      </div>
+  </div>
     <div class="section" id="section2">
       <div style="text-align: center">
-        <div class="jb"></div>
+        <div
+          style="
+            background-image: url('https://mblogthumb-phinf.pstatic.net/MjAyMDA0MTBfMzUg/MDAxNTg2NTE2MzEwODI4.D7WQyfQfWMQL-70fgmljzZshLr6nOElb9q5Blf4_VB4g.wQa-55eDRSXXkZ2jq9fwhlf6j5VzZ_Z-jcUJJFwVdT4g.PNG.holpi37/SE-f71df96a-4f71-4324-a1c0-9c66e9ec4db3.png?type=w800');
+          "
+          class="jb"
+        ></div>
         <h1>ABOUT ME</h1>
         <br />
         <div class="tablebox">
@@ -240,9 +441,251 @@
         <h6 style="color: gray">made by TEAM 6</h6>
       </div>
     </div>
-    <div class="section" id="section3"></div>
-    <div class="section" id="section4"></div>
-    <div class="section" id="section5"></div>
+    <div class="section" id="section2-1">
+      <div class="team" id="wrap_img">
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+      </div>
+      <div class="intro" style="text-align: center;">
+      </div>
+    <div class="section" id="section3">
+      <div style="text-align: center">
+        <div
+          style="
+            background-image: url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimg1.daumcdn.net%2Fthumb%2FR1280x0%2F%3Fscode%3Dmtistory2%26fname%3Dhttps%253A%252F%252Fblog.kakaocdn.net%252Fdn%252Fdhjpan%252Fbtsf2q4v69C%252FmZc8JEKymvhdicUwuK6ymK%252Fimg.jpg');
+          "
+          class="jb"
+        ></div>
+        <h1>ABOUT ME</h1>
+        <br />
+        <div class="tablebox">
+          <table class="table" width="250" cellpadding="10" cellspacing="1">
+            <tbody>
+              <tr>
+                <th scope="row">name</th>
+                <td>김진우</td>
+              </tr>
+              <tr>
+                <th scope="row">gender</th>
+                <td>male</td>
+              </tr>
+              <tr>
+                <th scope="row">birth</th>
+                <td>93.06.11</td>
+              </tr>
+              <tr>
+                <th scope="row">MBTI</th>
+                <td>ENTP</td>
+              </tr>
+              <tr>
+                <th scope="row">hobby</th>
+                <td>야구 , 축구 보는것</td>
+              </tr>
+              <tr>
+                <th scope="row">strength</th>
+                <td>끈기</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+        <a href="https://velog.io/@wlsdn090909"
+          ><img
+            src="https://cdn.icon-icons.com/icons2/3915/PNG/512/velog_logo_icon_249278.png"
+            width="70px"
+            height="70px"
+        /></a>
+        <a href="https://www.instagram.com/gimjinu245/"
+          ><img
+            src="https://cdn.pixabay.com/photo/2017/04/25/00/02/instagram-2258219_1280.png"
+            width="70px"
+            height="70px"
+        /></a>
+        <br />
+        <br />
+        <h6 style="color: gray">made by TEAM 6</h6>
+      </div>
+    </div>
+    <div class="section" id="section3-1">
+      <div class="team" id="wrap_img">
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+      </div>
+      <div class="intro" style="text-align: center;">
+      </div>
+  </div>
+    <div class="section" id="section4">
+      <div style="text-align: center">
+        <div
+          style="
+            background-image: url('https://mblogthumb-phinf.pstatic.net/MjAyMDA0MTBfMzUg/MDAxNTg2NTE2MzEwODI4.D7WQyfQfWMQL-70fgmljzZshLr6nOElb9q5Blf4_VB4g.wQa-55eDRSXXkZ2jq9fwhlf6j5VzZ_Z-jcUJJFwVdT4g.PNG.holpi37/SE-f71df96a-4f71-4324-a1c0-9c66e9ec4db3.png?type=w800');
+          "
+          class="jb"
+        ></div>
+        <h1>ABOUT ME</h1>
+        <br />
+        <div class="tablebox">
+          <table class="table" width="250" cellpadding="10" cellspacing="1">
+            <tbody>
+              <tr>
+                <th scope="row">name</th>
+                <td>임수빈</td>
+              </tr>
+              <tr>
+                <th scope="row">gender</th>
+                <td>female</td>
+              </tr>
+              <tr>
+                <th scope="row">birth</th>
+                <td>95.07.06</td>
+              </tr>
+              <tr>
+                <th scope="row">MBTI</th>
+                <td>INFJ</td>
+              </tr>
+              <tr>
+                <th scope="row">hobby</th>
+                <td>드라마 감상</td>
+              </tr>
+              <tr>
+                <th scope="row">strength</th>
+                <td>꼼꼼함, 강한 집념</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+        <a href="https://velog.io/@fnqhdtm"
+          ><img
+            src="https://cdn.icon-icons.com/icons2/3915/PNG/512/velog_logo_icon_249278.png"
+            width="70px"
+            height="70px"
+        /></a>
+        <a href="https://www.instagram.com/keisha.sb/"
+          ><img
+            src="https://cdn.pixabay.com/photo/2017/04/25/00/02/instagram-2258219_1280.png"
+            width="70px"
+            height="70px"
+        /></a>
+        <br />
+        <br />
+        <h6 style="color: gray">made by TEAM 6</h6>
+      </div>
+    </div>
+    <div class="section" id="section4-1">
+      <div class="team" id="wrap_img">
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+      </div>
+      <div class="intro" style="text-align: center;">
+      </div>
+  </div>
+    <div class="section" id="section5">
+      <div style="text-align: center">
+        <div
+          style="
+            background-image: url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimg1.daumcdn.net%2Fthumb%2FR1280x0%2F%3Fscode%3Dmtistory2%26fname%3Dhttps%253A%252F%252Fblog.kakaocdn.net%252Fdn%252FbQVGAZ%252FbtsgaOwtvzX%252FiphQeU4TuP1AXG3b8KnxG0%252Fimg.jpg');
+          "
+          class="jb"
+        ></div>
+        <h1>ABOUT ME</h1>
+        <br />
+        <div class="tablebox">
+          <table class="table" width="250" cellpadding="10" cellspacing="1">
+            <tbody>
+              <tr>
+                <th scope="row">name</th>
+                <td>주지원</td>
+              </tr>
+              <tr>
+                <th scope="row">gender</th>
+                <td>female</td>
+              </tr>
+              <tr>
+                <th scope="row">birth</th>
+                <td>98.09.02</td>
+              </tr>
+              <tr>
+                <th scope="row">MBTI</th>
+                <td>INFP</td>
+              </tr>
+              <tr>
+                <th scope="row">hobby</th>
+                <td>사진, 넷플릭스 보기</td>
+              </tr>
+              <tr>
+                <th scope="row">strength</th>
+                <td>융통성</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+        <a href="https://larimar.tistory.com/"
+          ><img
+            src="https://cdn.icon-icons.com/icons2/3915/PNG/512/velog_logo_icon_249278.png"
+            width="70px"
+            height="70px"
+        /></a>
+        <a href="https://instagram.com/jxoneea?igshid=NTc4MTIwNjQ2YQ=="
+          ><img
+            src="https://cdn.pixabay.com/photo/2017/04/25/00/02/instagram-2258219_1280.png"
+            width="70px"
+            height="70px"
+        /></a>
+        <br />
+        <br />
+        <h6 style="color: gray">made by TEAM 6</h6>
+      </div>
+    </div>
+    <div class="section" id="section5-1">
+      <div class="team" id="wrap_img">
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+          <div>
+              <img src="https://spartacodingclub.kr/v5/images/coding101_curri_detail/rtan_coding.png"
+                  width="150px">
+          </div>
+      </div>
+      <div class="intro" style="text-align: center;">
+      </div>
+  </div>
 
     <script src="/static/index.js"></script>
   </body>
