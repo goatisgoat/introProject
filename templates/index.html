@@ -39,8 +39,8 @@
         margin: 20px auto;
         background-color: transparent;
       }
-      Ï html {
-        overflow: hidden;
+      html {
+        overflow: scroll;
       }
       html,
       body {
@@ -81,32 +81,64 @@
         background-color: aliceblue;
       }
 
-      .inputComment {
+      .section1Container {
         width: 100%;
-        height: 80%;
-        background-color: aquamarine;
+        height: 400px;
+        background-color: blanchedalmond;
         display: flex;
+        align-items: end;
         justify-content: center;
       }
 
-      .inputComment ul {
-        list-style: none;
-        padding: 0;
+      .section1Input {
+        margin-bottom: 10px;
+        border-bottom: 1px solid black;
       }
 
-      .inputComment ul li {
-        border: 1px solid white;
+      .section1Container h1 {
+        position: absolute;
+        top: 50px;
+      }
+
+      .section1Input input {
+        border: none;
+        background-color: rgba(240, 248, 255, 0);
+      }
+
+      #commentInput:focus {
+        outline: none;
+      }
+
+      .section1Input button {
+        border: burlywood;
+        font-family: sans-serif;
+        background-color: white;
+        border-radius: 5px;
         padding: 5px;
       }
 
-      #commentInput {
-        padding: auto;
+      .inputComment {
+        /* border: 1px solid black; */
+        width: 60%;
+        height: 45%;
+        padding: 0 20px;
+        margin:  10px auto;
+        overflow: scroll;
+      }
+      .inputList {
+        width: 100%;
+        height: 100%;
+        /* background-color: aqua; */
       }
 
-      /* p {
-        width: 30px;
-        height: 30px;
-      } */
+      .divcomment {
+        border: 1px solid white;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        text-align: center;
+        background-color: antiquewhite;
+      }
     </style>
     <script>
       const btnArr = document.getElementsByTagName("button");
@@ -142,12 +174,18 @@
   </head>
   <body>
     <div class="section" id="section1">
-      <div class="inputComment">
-        <ul id="inputList">
-        </ul>
+      <div class="section1Container">
+        <h1>title</h1>
+        <div class="section1Input">
+          <input id="commentInput" type="text" placeholder="방명록 작성하기"/>
+          <button onclick="posting()">click</button>
+        </div>
       </div>
-      <div><input id="commentInput" type="text" /></div>
-      <button onclick="posting()">sdfsfs</button>
+
+      <div class="inputComment">
+        <div id="inputList"></div>
+        <!-- <ul ></ul> -->
+      </div>
     </div>
     <div class="section" id="section2">
       <div style="text-align: center">
@@ -159,7 +197,7 @@
             <tbody>
               <tr>
                 <th scope="row">name</th>
-                <td>Subin</td>
+                <td>Yujin</td>
               </tr>
               <tr>
                 <th scope="row">gender</th>
@@ -167,19 +205,19 @@
               </tr>
               <tr>
                 <th scope="row">birth</th>
-                <td>95.07.06</td>
+                <td>99.05.09</td>
               </tr>
               <tr>
                 <th scope="row">MBTI</th>
-                <td>INFJ</td>
+                <td>INFP</td>
               </tr>
               <tr>
                 <th scope="row">hobby</th>
-                <td>드라마 감상</td>
+                <td>팟캐스트 듣기</td>
               </tr>
               <tr>
                 <th scope="row">strength</th>
-                <td>꼼꼼함, 강한 집념</td>
+                <td>꾸준히 하는 습관</td>
               </tr>
             </tbody>
           </table>

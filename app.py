@@ -31,12 +31,11 @@ def comment_get():
 @app.route("/introPosting", methods=["POST"])
 def comment_post():
     comment_receive = request.form['comment_give']
-    num = len(list(db.fan.find({},{'_id':False})))
+   #  num = len(list(db.fan.find({},{'_id':False})))
 
 
     doc = {'comment': comment_receive,
-           'like' : 0,
-           'num' : num +1 
+           'like' : 0, 
     }
     db.teamComment.insert_one(doc)
     
@@ -60,11 +59,10 @@ def comment_delete():
 # 좋아요
 @app.route("/fan/like", methods=["POST"]) 
 def fan_like():
-   #  num_receive = request.form['num_give']
-   #  like_receive = request.form['like_give']
+    like_receive = request.form['like_give']
     id_receive = request.form['id_give']
 
-    db.teamComment.update_one({'_id': id_receive },{'$set': {'like' : int(like_receive) + 1 }})
+    db.teamComment.update_one({'_id': ObjectId(id_receive)},{'$set': {'like' : int(like_receive) + 1 }})
     return jsonify({'msg':'좋아요'})
 
 if __name__ == '__main__':
