@@ -1,14 +1,13 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 from bson.objectid import ObjectId
 from pymongo import MongoClient
-import certifi
-
+import certifi 
 ca = certifi.where()
 
-client = MongoClient('mongodb+srv://sparta:test@cluster0.ucno5cd.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
-db = client.dbsparta
+client = MongoClient('mongodb+srv://sparta:test@cluster0.ucno5cd.mongodb.net/?retryWrites=true&w=majority', tlsCAFile = ca )
 
+db = client.dbsparta
 
 
 @app.route('/')
@@ -39,7 +38,7 @@ def comment_post():
     }
     db.teamComment.insert_one(doc)
     
-    return jsonify({'msg': 'POST 연결 완료!'})
+    return jsonify({'msg': '저장 완료!'})
 
 
 
@@ -64,6 +63,7 @@ def fan_like():
 
     db.teamComment.update_one({'_id': ObjectId(id_receive)},{'$set': {'like' : int(like_receive) + 1 }})
     return jsonify({'msg':'좋아요'})
+
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5008, debug=True)
