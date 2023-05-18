@@ -1,5 +1,5 @@
 * {
-  font-family: "Gowun Dodum", sans-serif;
+  font-family: "neodgm-code", sans-serif;
 }
 
 
@@ -194,6 +194,9 @@ body {
   display: flex;
   align-items: end;
   justify-content: center;
+  background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fmxe7e%2Fbtsgn3uLshF%2FjCKdo8i8yPj2sIhCxZILd0%2Fimg.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .section1Input {
@@ -231,6 +234,11 @@ body {
   margin: 20px auto;
   
 }
+
+/*inputComment 스크롤 삭제*/
+.inputComment::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리, 오페라, 엣지 */
+  }
 
 .inputList {
   width: 100%;
