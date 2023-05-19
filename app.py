@@ -5,7 +5,7 @@ from pymongo import MongoClient
 import certifi 
 ca = certifi.where()
 
-client = MongoClient('mongodb+srv://sparta:test@cluster0.ucno5cd.mongodb.net/?retryWrites=true&w=majority', tlsCAFile = ca )
+client = MongoClient('URL주소를 입력해주세요', tlsCAFile = ca )
 
 db = client.dbsparta
 
